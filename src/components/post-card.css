@@ -1,0 +1,42 @@
+.gw{
+    width: 1077px;
+    height: 644px;
+    background-color: hotpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post{
+    width: 527px;
+    height: 491px;
+    background-color: #543C72;
+    border-radius: 40px;
+    border: 1px solid black;
+}
+
+.name-user{
+    width: 527px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name-user-div{
+    display: flex;
+}
+
+.stroke-3{
+    width: 527px;
+    height: 1px;
+    background-color: white;
+}
+
+.post-content{
+    width: 527px;
+    height: 408px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
