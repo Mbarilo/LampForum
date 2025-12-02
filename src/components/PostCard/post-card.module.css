@@ -1,7 +1,7 @@
 .gw{
-    width: 1077px;
-    height: 644px;
-    background-color: hotpink;
+    width: 1080px;
+    height: 645px;
+    background-color: #713B6D;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@
     border: 1px solid black;
 }
 
-.name-user{
+.nameUser{
     width: 527px;
     height: 82px;
     display: flex;
@@ -23,20 +23,32 @@
     justify-content: space-between;
 }
 
-.name-user-div{
+.nameUserDiv{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.stroke-3{
+.stroke3{
     width: 527px;
     height: 1px;
     background-color: white;
 }
 
-.post-content{
+.postContent{
     width: 527px;
     height: 408px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.descriptionDiv{
+    width: 487px;
+    height: 89px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
 }

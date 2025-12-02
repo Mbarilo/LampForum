@@ -7,10 +7,11 @@
     align-items: center;
 }
 
-.main-content{
+.mainContent{
     width: 1280px;
-    height: 645px;
-    background-color: #713B6D;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
 }
 
 .stroke{
@@ -19,39 +20,40 @@
     background-color: white;
 }
 
-.side-bar{
+.sideBar{
     width: 200px;
-    height: 496px;
     background-color: #713B6D;
 }
 
-.profile-link{
+.profileLink{
     width: 198px;
     height: 78px;
     background-color: #713B6D;
     display: flex;
     align-items: center;
+    gap: 19px;
 }
 
-.home-link{
+.homeLink{
     width: 198px;
     height: 72px;
     background-color: #713B6D;
     display: flex;
     align-items: center;
+    gap: 28px;
 }
 
-.stroke-2{
+.stroke2{
     width: 1px;
     height: 645px;
-    background-color: #713B6D;
+    background-color: white;
 }
 
 .footer{
     width: 200px;
-    height: 120px;
+    height: 495px;
     background-color: #713B6D;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
