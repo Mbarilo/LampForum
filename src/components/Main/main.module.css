@@ -1,44 +1,53 @@
-.mainContent{
-    width: 1280px;
-    background-color: blue;
+.mainContent {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(180px, 220px) 1px 1fr;
+    background-color: #713B6D;
+    box-sizing: border-box;
+}
+
+.sideBar {
+    background-color: #713B6D;
+    padding-top: 1rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 180px;
 }
 
-.sideBar{
-    width: 200px;
-    background-color: #713B6D;
-}
-
-.profileLink{
-    width: 198px;
-    height: 78px;
-    background-color: #713B6D;
-    display: flex;
-    align-items: center;
-    gap: 19px;
-}
-
-.homeLink{
-    width: 198px;
-    height: 72px;
-    background-color: #713B6D;
+.profileLink,
+.homeLink {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: clamp(10px, 2vw, 20px);
+    padding: 0.8rem 1rem;
+    cursor: pointer;
 }
 
-.footer{
-    width: 200px;
-    height: 495px;
-    background-color: #713B6D;
+.profileLink img,
+.homeLink img {
+    width: clamp(25px, 4vw, 36px);
+}
+
+.profileLink h2,
+.homeLink h2 {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: white;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
+    color: white;
 }
 
-.stroke2{
+.stroke2 {
     width: 1px;
-    height: 645px;
     background-color: white;
+    height: 100%;
 }
