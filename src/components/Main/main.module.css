@@ -51,3 +51,61 @@
     background-color: white;
     height: 100%;
 }
+
+.content {
+    padding: 1rem 2rem;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.searchInput {
+    width: 60%;
+    padding: 0.7rem 1rem;
+    border-radius: 20px;
+    border: 2px solid #472447;
+    background-color: #8A4C86;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+}
+
+.createBtn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #5A2E58;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+.tag{
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    background-color: #5A2E58;
+    border: 1px solid white;
+    color: white;
+}
+
+.likesFilter input {
+    margin-right: 5px;
+}
+
+.tagList {
+    display: flex;
+    gap: 0.5rem;
+}
