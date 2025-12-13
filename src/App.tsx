@@ -1,17 +1,17 @@
-import React from 'react';
-import PostCard from './components/PostCard/PostCard';
-import styles from "./app.module.css";
-import Header from './components/Header/header';
-import Main from './components/Main/main';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layout/layout";
+import HomePage from "./pages/HomePage";
+import PostsPage from "./pages/PostsPage";
+
+
 const App = () => {
   return (
-  <>
-    <Header></Header>
-
-    <div className={styles.stroke}></div>
-
-    <Main></Main>
-  </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="posts" element={<PostsPage />} />
+      </Route>
+    </Routes>
   );
 };
 
