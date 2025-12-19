@@ -24,32 +24,39 @@ const PostsPage = () => {
   const [selectedTags, setSelectedTags] = useState<number[]>([]);
   const [likesMinimumValue, setLikesMinimumValue] = useState(0);
 
-  const [posts] = useState<Post[]>([
-    {
-      id: 1,
-      title: "",
-      description: "This is my cat",
-      image: "https://i.postimg.cc/6pxm54XB/image-3-(1).png",
-      likes: 12,
-      tags: [{ id: 1, name: "animals" }],
-    },
-    {
-      id: 2,
-      title: "",
-      description: "Trump",
-      image: "https://i.postimg.cc/X7cnzgkY/Donald-J-Trump.webp",
-      likes: 44,
-      tags: [{ id: 2, name: "news" }],
-    },
-  ]);
-
-  const [tags] = useState<Tag[]>([
-    { id: 1, name: "animals" },
-    { id: 2, name: "news" },
-    { id: 3, name: "funny" },
-  ]);
-
-  const [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+  const [tags, setTags] = useState<Tag[]>([]);
+  
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+  
+        const postsRes = await fetch("http://localhost:8001/posts");
+        if (!postsRes.ok) throw new Error("Ошибка загрузки постов");
+        const postsData = await postsRes.json();
+  
+        const tagsRes = await fetch("http://localhost:8001/tags");
+        if (!tagsRes.ok) throw new Error("Ошибка загрузки тегов");
+        const tagsData = await tagsRes.json();
+  
+        setPosts(postsData);
+        setFilteredPosts(postsData);
+        setTags(tagsData);
+      } catch (e: unknown) {
+        setError("Не удалось получить данные с сервера");
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   useEffect(() => {
     let result = [...posts];
@@ -72,6 +79,22 @@ const PostsPage = () => {
 
     setFilteredPosts(result);
   }, [searchValue, selectedTags, likesMinimumValue, posts]);
+
+  if (loading) {
+    return (
+      <div>
+        <p>Загрузка постов…</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <p>{error}</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -99,7 +122,7 @@ const PostsPage = () => {
         ))}
       </div>
     </>
+    
   );
 };
-
 export default PostsPage;
