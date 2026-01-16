@@ -1,18 +1,16 @@
-interface SearchPostProps {
-    value: string;
-    onChange: (value: string) => void;
-  }
-  
+import { usePosts } from "../../../context/PostsContext";
 
-function SearchPost ({ value, onChange }: SearchPostProps) {
-    return(
-        <input
-        type="text"
-        placeholder="Find Post..."
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-/>   
-    )
-}
-  
+const SearchPost = () => {
+  const { search, setSearch } = usePosts();
+
+  return (
+    <input
+      type="text"
+      placeholder="Search posts..."
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+    />
+  );
+};
+
 export default SearchPost;
